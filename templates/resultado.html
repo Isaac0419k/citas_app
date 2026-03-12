@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block content %}
+<div class="card-resultado {% if tipo == 'error' %}error{% else %}exito{% endif %}">
+  <h2>
+    {% if tipo == 'error' %}
+      <i class="fa-solid fa-circle-xmark"></i>
+    {% else %}
+      <i class="fa-solid fa-circle-check"></i>
+    {% endif %}
+    {{ titulo }}
+  </h2>
+  <p>{{ mensaje }}</p>
+</div>
+<a href="/"><button class="volver"><i class="fa-solid fa-house"></i> Ir al Inicio</button></a>
+{% endblock %}

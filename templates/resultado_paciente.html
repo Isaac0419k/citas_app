@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Datos del Paciente{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-user"></i> Datos del Paciente</h2>
+{% if paciente %}
+<div class="card-resultado">
+  <p><i class="fa-solid fa-id-card"></i> <strong>Documento:</strong> {{ paciente.documento }}</p>
+  <p><i class="fa-solid fa-user"></i> <strong>Nombre:</strong> {{ paciente.nombre }} {{ paciente.apellido }}</p>
+  <p><i class="fa-solid fa-phone"></i> <strong>Teléfono:</strong> {{ paciente.telefono }}</p>
+  <p><i class="fa-solid fa-envelope"></i> <strong>Correo:</strong> {{ paciente.correo }}</p>
+  <p><i class="fa-solid fa-hospital"></i> <strong>EPS:</strong> {{ paciente.eps }}</p>
+</div>
+{% else %}
+<div class="card-resultado error">
+  <p><i class="fa-solid fa-triangle-exclamation"></i> No se encontró ningún paciente con ese documento.</p>
+</div>
+{% endif %}
+<a href="/consultar"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Buscar otro</button></a>
+<a href="/"><button class="volver"><i class="fa-solid fa-house"></i> Inicio</button></a>
+{% endblock %}

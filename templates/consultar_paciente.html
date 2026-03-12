@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Consultar Paciente{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-user-check"></i> Consultar Paciente</h2>
+<form action="/consultar_paciente" method="POST">
+  <label>Ingrese el número de documento del paciente</label>
+  <input type="text" name="documento" placeholder="Número de documento" required>
+  <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Consultar</button>
+</form>
+<a href="/"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+{% endblock %}

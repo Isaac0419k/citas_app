@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Inicio - EPS Citas Viva 1A IPS{% endblock %}
+{% block content %}
+<div class="hero-bg">
+  <div class="hero-container">
+    <h1 class="hero-title">Sistema de Citas Médicas</h1>
+    <p class="hero-desc">Realiza desde cualquier lugar y de manera fácil tus requerimientos a través del portal del usuario</p>
+    <div class="botones">
+      <a href="/registro">
+        <button><i class="fa-solid fa-user-plus"></i> Registrar Paciente</button>
+      </a>
+      <a href="/reservar">
+        <button><i class="fa-solid fa-calendar-plus"></i> Reservar Cita</button>
+      </a>
+      <a href="/consultar_cita">
+        <button><i class="fa-solid fa-magnifying-glass"></i> Consultar Cita</button>
+      </a>
+      <a href="/consultar">
+        <button><i class="fa-solid fa-user-check"></i> Consultar Paciente</button>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

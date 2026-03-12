@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a href="/">
+      <span style="font-weight:800; font-size:1.3rem; color:#fff; letter-spacing:1px;">&#10010; Viva 1A IPS</span>
+    </a>
+  </div>
+  <ul class="navbar-links">
+    <li><a href="/" class="{% if request.path == '/' %}active{% endif %}"><i class="fa-solid fa-house"></i> Inicio</a></li>
+    <li><a href="/nosotros" class="{% if request.path == '/nosotros' %}active{% endif %}"><i class="fa-solid fa-users"></i> Nosotros</a></li>
+    <li><a href="/servicios" class="{% if request.path == '/servicios' %}active{% endif %}"><i class="fa-solid fa-stethoscope"></i> Servicios</a></li>
+    <li><a href="/programas" class="{% if request.path == '/programas' %}active{% endif %}"><i class="fa-solid fa-heart-pulse"></i> Programas</a></li>
+    <li><a href="/sedes" class="{% if request.path == '/sedes' %}active{% endif %}"><i class="fa-solid fa-location-dot"></i> Sedes</a></li>
+  </ul>
+</nav>

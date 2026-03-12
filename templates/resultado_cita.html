@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Resultado de Cita{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-calendar-days"></i> Información de la Cita</h2>
+{% if cita %}
+<div class="card-resultado">
+  <p><i class="fa-solid fa-hashtag"></i> <strong>ID Cita:</strong> {{ cita.id }}</p>
+  <p><i class="fa-solid fa-id-card"></i> <strong>Documento:</strong> {{ cita.documento }}</p>
+  <p><i class="fa-solid fa-user-doctor"></i> <strong>Médico:</strong> {{ cita.medico }}</p>
+  <p><i class="fa-solid fa-stethoscope"></i> <strong>Tipo de cita:</strong> {{ cita.tipo_cita }}</p>
+  <p><i class="fa-solid fa-calendar"></i> <strong>Fecha:</strong> {{ cita.fecha }}</p>
+  <p><i class="fa-solid fa-clock"></i> <strong>Hora:</strong> {{ cita.hora }}</p>
+  <p><i class="fa-solid fa-location-dot"></i> <strong>Dirección EPS:</strong> {{ cita.direccion_eps }}</p>
+</div>
+<a href="/editar_cita/{{ cita.id }}">
+  <button><i class="fa-solid fa-pen-to-square"></i> Editar Cita</button>
+</a>
+{% else %}
+<div class="card-resultado error">
+  <p><i class="fa-solid fa-triangle-exclamation"></i> No se encontró ninguna cita con ese documento.</p>
+</div>
+{% endif %}
+<a href="/consultar_cita"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Buscar otra</button></a>
+<a href="/"><button class="volver"><i class="fa-solid fa-house"></i> Inicio</button></a>
+{% endblock %}

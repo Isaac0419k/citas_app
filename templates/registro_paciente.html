@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Registro de Paciente{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-user-plus"></i> Registro de Paciente</h2>
+<form action="/guardar_paciente" method="POST">
+  <label>Nombre</label>
+  <input type="text" name="nombre" placeholder="Ingresa el nombre" required>
+
+  <label>Apellido</label>
+  <input type="text" name="apellido" placeholder="Ingresa el apellido" required>
+
+  <label>Documento</label>
+  <input type="text" name="documento" placeholder="Número de documento" required>
+
+  <label>Teléfono</label>
+  <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+
+  <label>Correo electrónico</label>
+  <input type="email" name="correo" placeholder="correo@ejemplo.com" required>
+
+  <label>EPS</label>
+  <input type="text" name="eps" placeholder="Nombre de la EPS" required>
+
+  <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Registrar</button>
+</form>
+<a href="/"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Reservar Cita{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-calendar-plus"></i> Reservar Cita</h2>
+<form action="/guardar_cita" method="POST">
+  <label>Documento del Paciente</label>
+  <input type="text" name="documento" placeholder="Número de documento" required>
+
+  <label>Médico</label>
+  <input type="text" name="medico" placeholder="Nombre del médico" required>
+
+  <label>Tipo de Cita</label>
+  <select name="tipo_cita" required>
+    <option value="">-- Selecciona --</option>
+    <option value="Medicina General">Medicina General</option>
+    <option value="Especialista">Especialista</option>
+    <option value="Odontología">Odontología</option>
+    <option value="Laboratorio">Laboratorio</option>
+    <option value="Imágenes Diagnósticas">Imágenes Diagnósticas</option>
+    <option value="Urgencias">Urgencias</option>
+  </select>
+
+  <label>Fecha</label>
+  <input type="date" name="fecha" required>
+
+  <label>Hora</label>
+  <input type="time" name="hora" required>
+
+  <label>Dirección EPS</label>
+  <input type="text" name="direccion_eps" placeholder="Dirección de la sede" required>
+
+  <button type="submit"><i class="fa-solid fa-calendar-check"></i> Reservar</button>
+</form>
+<a href="/"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+{% endblock %}

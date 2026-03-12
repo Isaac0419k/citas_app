@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Editar Cita{% endblock %}
+{% block content %}
+<h2><i class="fa-solid fa-pen-to-square"></i> Editar Cita</h2>
+<form action="/actualizar_cita" method="POST">
+  <input type="hidden" name="id" value="{{ cita.id }}">
+
+  <label>Fecha</label>
+  <input type="date" name="fecha" value="{{ cita.fecha }}" required>
+
+  <label>Hora</label>
+  <input type="time" name="hora" value="{{ cita.hora }}" required>
+
+  <label>Tipo de cita</label>
+  <input type="text" name="tipo_cita" value="{{ cita.tipo_cita }}" required>
+
+  <label>Médico asignado</label>
+  <input type="text" name="medico" value="{{ cita.medico }}" required>
+
+  <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+</form>
+<a href="/"><button class="volver"><i class="fa-solid fa-arrow-left"></i> Volver</button></a>
+{% endblock %}
